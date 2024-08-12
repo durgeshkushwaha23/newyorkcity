@@ -30,7 +30,64 @@ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
 // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
 ScrollTrigger.refresh();
- 
+
+
+
+// Animate the letters using GSAP
+
+// Animate "N" to the left corner
+gsap.to(".loading h1", {
+  x: "-40vw", // Move N to the left
+  y: "-25vh", // Move N up
+  duration: 1,
+  onComplete: function() {
+    gsap.to(".loading h1", { 
+      opacity: 0, 
+      duration: 0.5, 
+      ease: "power1.inOut" 
+    });
+  }
+  
+});
+
+// Animate "Y" to the middle
+gsap.to(".loading h2", {
+  x: "-5vw", // Centered horizontally
+  y: "-11.9vw", // Centered vertically
+  duration: 2,
+  ease: "power2.out",
+  onComplete: function() {
+    gsap.to(".loading h2", { 
+      opacity: 0, 
+      duration: 0.5, 
+      ease: "power1.inOut" 
+    });
+  }
+});
+
+// Animate "E" to the right corner
+gsap.to(".loading h3", {
+  x: "32vw", // Move E to the right
+  y: "-25vh", // Move E up
+  duration: 2,
+  ease: "power2.out",
+  opacity: 0,
+  onComplete: function() {
+    gsap.to(".loading h3", { 
+      opacity: 0, 
+      duration: 0.5, 
+      ease: "power1.inOut" 
+    });
+  }
+
+});
+gsap.to(".tt",{
+  y:"-100vw",
+  delay:1,
+  ease: "power2.out",
+
+  duration: 2,
+})
 
 gsap.to(".boxes",{
   x:"-750%",
@@ -41,7 +98,7 @@ gsap.to(".boxes",{
     start:"top 0%",
     end:"top -400%",
     scrub:5,
-    // pin:true,
+    pin:true,
     pinSpacing: false,
   }
 })
@@ -52,11 +109,11 @@ gsap.to(".boxes:nth-child(even)",{
   scrollTrigger:{
     scroller:".main",
     trigger:".page5",
-    markers:true,
+    // markers:true,
     start:"top 0%",
     end:"top -400%",
     scrub:5,
-    pin:true,
+    // pin:true,
     pinSpacing: false,
   }
-})
+});
