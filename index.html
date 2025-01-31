@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" /> <!-- Recommended -->
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
   <title>New york city</title>
 </head>
@@ -14,13 +15,36 @@
 <body>
   <div class="nav">
     <h1>NYC</h1>
-    <div class="menu">
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
+    <div class="relative">
+      <div id="menu-btn" class="menu w-10 h-8 flex flex-col justify-between cursor-pointer z-50">
+          <div class="line w-full h-1 bg-black transition-transform duration-300"></div>
+          <div class="line w-full h-1 bg-black transition-transform duration-300"></div>
+      </div>
+  </div>
+
+  <!-- Overlay Background -->
+  <div id="overlay" class="fixed inset-0  bg-transparent hidden"></div>
+
+  <!-- Slide-in Menu -->
+  <nav id="side-menu" class="fixed top-0 right-[-100%] w-64 h-full bg-transparent text-white shadow-lg flex flex-col items-center justify-center transition-all duration-500">
+      <ul class="space-y-6 text-3xl bg-transparent text-white font-semibold">
+          <li><a href="#" class="text-gray-700 hover:text-blue-500 transition">Home</a></li>
+          <li><a href="#" class="text-gray-700 hover:text-blue-500 transition">About</a></li>
+          <li><a href="#" class="text-gray-700 hover:text-blue-500 transition">Services</a></li>
+          <li><a href="#" class="text-gray-700 hover:text-blue-500 transition">Contact</a></li>
+      </ul> 
+  </nav>
   </div>
   <div class="main">
     <div class="page1">
+      <div class="loading">
+        <h1>N</h1>
+        <h2>Y</h2>
+        <h3>E</h3>
+      </div>
+      <div class="tt">
+
+      </div>
       <div class="page1abs">
         <div class="page1text">
           <h1>new</h1>
